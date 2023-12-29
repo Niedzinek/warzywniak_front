@@ -8,7 +8,7 @@ import Podsumowanie from "./pages/Podsumowanie";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <AuthLoginForm/>
   },
   {

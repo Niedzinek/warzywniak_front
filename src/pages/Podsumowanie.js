@@ -1,4 +1,4 @@
-function Podsumowanie(){
+function Podsumowanie(props){
     return(
         <></>
     )
