@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart  } from "../store/slice"
 
 function OfertaCard(props){
-  const [ilosc, setIlosc] = useState();
+  const [ilosc, setIlosc] = useState(1);
 
   const dispatch = useDispatch();
   // const cart = useSelector((state) => state.cart)
@@ -34,7 +34,9 @@ function OfertaCard(props){
             <Form.Group controlId="quantity">
             <Form.Label>Quantity:</Form.Label>
             <Form.Control
-            // defaultValue={1}
+            min={parseInt(1)}
+            defaultValue={parseInt(1)}
+            required={true}
               type="number" 
               onChange={(z) => setIlosc(z.target.value)}
               />
