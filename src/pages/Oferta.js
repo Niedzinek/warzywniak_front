@@ -1,51 +1,32 @@
 import { Col, Row } from "react-bootstrap";
 import OfertaCard from "../components/OfertaCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useFetch from "../services/useFetch";
 
 function Oferta(props){
 
     const cart = useSelector(state => state.cart)
 
-    const oferty = [
-        {
-            id: 1,
-            nazwa: "irga",
-            kolor: "bialy",
-            cena: 45
-        },
-        {
-            id: 2,
-            nazwa: "irys",
-            kolor: "bialy",
-            cena: "50"
-        },
-        {
-            id: 3,
-            nazwa: "jurek",
-            kolor: "kremowy",
-            cena: 45
-        },
-        {
-            id: 4,
-            nazwa: "tajfun",
-            kolor: "zolty",
-            cena: 45
-        }
-    ]
+    const {data, error, loading, fetchData} = useFetch('http://localhost:8080/products');
+    
     
 
     function onOfertaItemClicked(produkt, ilosc){
         console.log(ilosc)
         console.log(produkt)
     }
+    useEffect(() => {
+        fetchData();
+    },[]);
 
-    const [wybrane, setWybrane] = useState();
+    if(loading) return <div>loading...</div>
+    if(error) return <div>Error: {error.message}</div>
 
     return(
         <Row>
-            {oferty &&
-            oferty.map((oferta)=>{
+            {data &&
+            data.map((oferta)=>{
                 return(
                     <Col sm = "4">
                     <OfertaCard

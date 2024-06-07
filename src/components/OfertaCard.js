@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import {Card, CardBody, CardImg, CardText, CardTitle, Row, Col, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 // import { cartActions } from "../store/cartSlice"
-import { addToCart, removeFromCart  } from "../store/slice"
+import { addToCart, removeFromCart  } from "../store/CartSlice"
 
 function OfertaCard(props){
   const [ilosc, setIlosc] = useState(1);
@@ -21,10 +21,10 @@ function OfertaCard(props){
         <Card>
             <CardBody>
             {/* <CardImg/> */}
-            <CardTitle>{props.produkt.nazwa}</CardTitle>
+            <CardTitle>{props.produkt.name}</CardTitle>
             <Col>
-            <CardText>{props.produkt.kolor}</CardText>
-            <CardText>{props.produkt.cena}</CardText>
+            <CardText>{props.produkt.description}</CardText>
+            <CardText>{props.produkt.price}</CardText>
             <Form 
             onSubmit={(e) => {
               e.preventDefault();

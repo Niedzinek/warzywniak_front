@@ -22,9 +22,7 @@ function ClientLayout(){
                         // oferty = {oferty}
                         // onOfertaItemClicked = {handleAddToCart}
                     />
-                    <Button 
-                        // onClick={handleClick}
-                    >xxx</Button>
+                    
                 </Col>
                 <Col sm ={3}>
                     <Koszyk
