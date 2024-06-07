@@ -3,11 +3,13 @@ import KoszykCard from "../components/KoszykCard"
 import {Row, Col, Button} from "react-bootstrap"
 import { useEffect, useState } from "react"
 import useFetch from "../services/useFetch"
+import { selectCurrentUser } from "../store/UserSlice"
 
 
 
 function Podsumowanie(){
     const checkout = useSelector((state) => state.cart)
+    const user = useSelector(selectCurrentUser);
 
     const [postData, setPostData] = useState(null);
     const { data, error, loading, fetchData } = useFetch('http://localhost:8080/purchase', {
