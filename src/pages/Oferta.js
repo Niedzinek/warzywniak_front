@@ -9,38 +9,38 @@ function Oferta(props){
 
     const cart = useSelector(state => state.cart)
 
-    const {data1, error, loading, fetchData} = useFetch('http://localhost:8080/products');
+    const {data, error, loading, fetchData} = useFetch('http://localhost:8080/products');
     
-    const data = [{
-        id: "1",
-        price: "66",
-        description : "opis",
-        name: "nazwa"
-    },
-    {
-        id: "1",
-        price: "66",
-        description : "opis",
-        name: "nazwa"
-    },
-    {
-        id: "1",
-        price: "66",
-        description : "opis",
-        name: "nazwa"
-    },
-    {
-        id: "1",
-        price: "66",
-        description : "opis",
-        name: "nazwa"
-    },
-    {
-        id: "1",
-        price: "66",
-        description : "opis",
-        name: "nazwa"
-    }]
+    // const data1 = [{
+    //     id: "1",
+    //     price: "66",
+    //     description : "opis",
+    //     name: "nazwa"
+    // },
+    // {
+    //     id: "1",
+    //     price: "66",
+    //     description : "opis",
+    //     name: "nazwa"
+    // },
+    // {
+    //     id: "1",
+    //     price: "66",
+    //     description : "opis",
+    //     name: "nazwa"
+    // },
+    // {
+    //     id: "1",
+    //     price: "66",
+    //     description : "opis",
+    //     name: "nazwa"
+    // },
+    // {
+    //     id: "1",
+    //     price: "66",
+    //     description : "opis",
+    //     name: "nazwa"
+    // }]
 
     function onOfertaItemClicked(produkt, ilosc){
         console.log(ilosc)

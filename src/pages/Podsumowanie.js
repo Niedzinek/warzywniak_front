@@ -29,7 +29,7 @@ function Podsumowanie(){
     }));
 
         setPostData({
-            "userId": "2",
+            "userId": user.sub,
             "orderedProducts": orderedProducts
         })
     },[checkout.list])

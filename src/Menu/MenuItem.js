@@ -15,7 +15,7 @@ function MenuItem(props){
         
         
         <Container>
-            <Navbar bg="light">
+            <Navbar >
                 <Container>
                 <Button onClick={() => handleClick(props.link)}>{props.nazwa}</Button>
                 </Container>

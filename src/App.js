@@ -9,6 +9,7 @@ import Podsumowanie from "./pages/Podsumowanie";
 import { doLogin, selectCurrentToken, selectCurrentUser } from "./store/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Menu from "./Menu/Menu";
+import PurchasesList from "./pages/PurchasesList";
 
 
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     element: <ClientLayout/>,
     children: [
   {
-    path: "/",
+    path: "/oferta",
     element: <Oferta/>
   },
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/podsumowanie",
     element: <Podsumowanie/>
+  },
+  {
+    path: "/zamowienia",
+    element: <PurchasesList/>
   }
 ]
 },
@@ -86,13 +91,7 @@ function App() {
   // }
 
   return (
-    <>
-    <RouterProvider router={router} >
-      <div>ghfhdg</div>
-    <Menu/>
-
-    </RouterProvider>
-    </>
+    <RouterProvider router={router}/>
   );
 }
 
