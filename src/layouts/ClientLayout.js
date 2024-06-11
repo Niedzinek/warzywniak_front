@@ -3,6 +3,8 @@ import Koszyk from "../pages/Koszyk";
 import Oferta from "../pages/Oferta";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Menu from "../Menu/Menu";
+import { Outlet } from "react-router-dom";
 
 function ClientLayout(){
     
@@ -14,10 +16,14 @@ function ClientLayout(){
     }
     
     return(
-
-        
+<>
+        <Row>
+            <Menu/>
+        </Row>
             <Row>
-                <Col sm={9}>
+<Outlet/>
+
+                {/* <Col sm={9}>
                     <Oferta 
                         // oferty = {oferty}
                         // onOfertaItemClicked = {handleAddToCart}
@@ -28,12 +34,9 @@ function ClientLayout(){
                     <Koszyk
                         // cartItems = {cartItems}
                     />
-                    <Link 
-                        to={"/podsumowanie"}
-                        // cartItems = {cartItems}
-                    >Przejdz do podsumowania</Link>
-                </Col>
+                </Col> */}
             </Row>
+    </>
 
 
 

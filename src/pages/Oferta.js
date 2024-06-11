@@ -3,14 +3,44 @@ import OfertaCard from "../components/OfertaCard";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useFetch from "../services/useFetch";
+import Koszyk from "./Koszyk";
 
 function Oferta(props){
 
     const cart = useSelector(state => state.cart)
 
-    const {data, error, loading, fetchData} = useFetch('http://localhost:8080/products');
+    const {data1, error, loading, fetchData} = useFetch('http://localhost:8080/products');
     
-    
+    const data = [{
+        id: "1",
+        price: "66",
+        description : "opis",
+        name: "nazwa"
+    },
+    {
+        id: "1",
+        price: "66",
+        description : "opis",
+        name: "nazwa"
+    },
+    {
+        id: "1",
+        price: "66",
+        description : "opis",
+        name: "nazwa"
+    },
+    {
+        id: "1",
+        price: "66",
+        description : "opis",
+        name: "nazwa"
+    },
+    {
+        id: "1",
+        price: "66",
+        description : "opis",
+        name: "nazwa"
+    }]
 
     function onOfertaItemClicked(produkt, ilosc){
         console.log(ilosc)
@@ -25,6 +55,9 @@ function Oferta(props){
 
     return(
         <Row>
+<Col sm="9">
+        
+        <Row>
             {data &&
             data.map((oferta)=>{
                 return(
@@ -38,6 +71,11 @@ function Oferta(props){
                 )
             })
             }
+        </Row>
+        </Col>
+        <Col sm="3">
+            <Koszyk/>
+        </Col>
         </Row>
     )
 }

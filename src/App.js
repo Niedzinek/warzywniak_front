@@ -8,17 +8,18 @@ import AuthRegistryForm from "./pages/AuthRegistryForm";
 import Podsumowanie from "./pages/Podsumowanie";
 import { doLogin, selectCurrentToken, selectCurrentUser } from "./store/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Menu from "./Menu/Menu";
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthLoginForm/>
-  },
+    element: <ClientLayout/>,
+    children: [
   {
-    path: "/oferta",
-    element: <ClientLayout/>
+    path: "/",
+    element: <Oferta/>
   },
   {
     path: "/register",
@@ -28,11 +29,13 @@ const router = createBrowserRouter([
     path: "/podsumowanie",
     element: <Podsumowanie/>
   }
+]
+},
 ]);
 
 function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const dispatch = useDispatch();
   const isRun = useRef(false);
 
@@ -83,7 +86,13 @@ function App() {
   // }
 
   return (
-    <RouterProvider router={router} />
+    <>
+    <RouterProvider router={router} >
+      <div>ghfhdg</div>
+    <Menu/>
+
+    </RouterProvider>
+    </>
   );
 }
 
